@@ -13,7 +13,7 @@ pip3 install --upgrade autopep8 jedi-language-server jedi wheel yarp pynvim neov
 2. Mở 1 file bằng nvim, `:ps` > `:Semshi enable` > `:UpdateRemotePlugins`
 3.
 ```cmd
-  :CocInstall coc-pyright coc-jedi
+  :CocInstall coc-pyright coc-jedi coc-docker
 ```
 
 - **Lưu ý**: Nếu gặp vấn đề với sonokai theme, vào đường dẫn của README.md hiện tại, chạy lệnh: 
