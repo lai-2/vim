@@ -6,6 +6,7 @@ return {
 			-- You can specify options here, or leave it empty for defaults.
 			-- For a VSCode-like experience, you might want a floating terminal:
 			direction = "horizontal",
+			open_mapping = [[<leader>tt]], -- Keymap to toggle terminal, using <leader>tt
 			size = 20, -- specifies the height in lines for horizontal split
 			-- open_mapping = [[<c-\>]], -- Keymap handled below
 			-- Ensures terminal opens in insert mode

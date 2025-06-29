@@ -71,11 +71,37 @@ return {
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		-- local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		-- for type, icon in pairs(signs) do
+		--	 local hl = "DiagnosticSign" .. type
+		--   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+		-- end
+
+		vim.diagnostic.config({
+			signs = {
+				active = true,
+				-- Define the sign text/icons for each diagnostic severity
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = "󰠠 ",
+					[vim.diagnostic.severity.INFO] = " ",
+				},
+				-- You can leave texthl and numhl empty or customize if needed
+				texthl = {
+					[vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+					[vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+					[vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+					[vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+				},
+				numhl = {
+					[vim.diagnostic.severity.ERROR] = "",
+					[vim.diagnostic.severity.WARN] = "",
+					[vim.diagnostic.severity.HINT] = "",
+					[vim.diagnostic.severity.INFO] = "",
+				},
+			},
+		})
 
 		mason_lspconfig.setup({
 			ensure_installed = {}, -- Add any servers you want to ensure are installed here
