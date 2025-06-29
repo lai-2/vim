@@ -34,7 +34,8 @@ git clone https://github.com/lai-2/vim.git ~/.config/nvim && nvim
 | [`tmux`](https://github.com/tmux/tmux/wiki) + `nvims` + [`gemini-cli`](https://github.com/google-gemini/gemini-cli)|
 
 - [x] [LazyVim](https://github.com/LazyVim/LazyVim)
-- [x] [sainnhe/everforest](https://github.com/sainnhe/everforest)
+- [ ] [sainnhe/everforest](https://github.com/sainnhe/everforest)
+- [x] [catppuccin/nvim](https://github.com/catppuccin/nvim)
 - [x] Plugin management with [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [x] File Explorer with [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - [x] Beautiful status line with [lualine](https://github.com/nvim-lualine/lualine.nvim)
