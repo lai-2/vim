@@ -6,7 +6,7 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 -- General Keymaps -------------------
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- move lines faster
 keymap.set("n", "J", "5j", { desc = "Move down 5 lines" })

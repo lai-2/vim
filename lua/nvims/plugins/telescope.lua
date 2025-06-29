@@ -15,12 +15,18 @@ return {
 				path_display = { "smart" },
 				mappings = {
 					i = {
-						["<C-k>"] = actions.move_selection_previous, -- move to prev result
-						["<C-j>"] = actions.move_selection_next, -- move to next result
-						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						-- ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+						-- ["<C-j>"] = actions.move_selection_next, -- move to next result
+						-- ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<TAB>"] = actions.move_selection_next,
+						["<S-TAB>"] = actions.move_selection_previous,
+						["<CR>"] = function(bufnr)
+							require("telescope.actions.set").edit(bufnr, "tab drop")
+						end,
 					},
 				},
 			},
+			file_ignore_patterns = { "^.*/%.git/.*", "^.*/node_modules/.*" },
 		})
 
 		telescope.load_extension("fzf")

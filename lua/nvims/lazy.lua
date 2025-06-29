@@ -21,3 +21,5 @@ require("lazy").setup({ { import = "nvims.plugins" }, { import = "nvims.plugins.
 		notify = false,
 	},
 })
+
+vim.cmd.colorscheme("catppuccin")
