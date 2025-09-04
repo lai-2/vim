@@ -16,7 +16,7 @@
 ## Installation
 
 * [Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) (v0.11.1)
-* [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (MesloLGS Nerd Font Mono)
+* [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (MesloLGS Nerd Font Mono) [Google Drive](https://drive.google.com/file/d/1wpnv3r4nr5mONlGczV28HqAy2MZ58pSx/view)
 * [iTerm2](https://iterm2.com/) (optional for Mac)
 
 ```bash
