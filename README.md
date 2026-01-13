@@ -20,6 +20,11 @@
 * [iTerm2](https://iterm2.com/) (optional for Mac)
 
 ```bash
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
+sudo apt install -y ripgrep tree-sitter-cli pipx xclip vim-gtk3
+pipx install isort && pipx install pylint
 git clone https://github.com/lai-2/vim.git ~/.config/nvim && nvim
 ```
 
