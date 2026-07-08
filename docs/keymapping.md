@@ -81,6 +81,19 @@ My leader key is set to **Space** (`" "`), which is a popular choice for modern 
 | `<Space>tp`     | Normal | `:tabp<CR>`     | Go to previous tab             |
 | `<Space>tf`     | Normal | `:tabnew %<CR>` | Open current buffer in new tab |
 
+### Folding
+
+Folds are treesitter-based (`foldmethod=expr` + `nvim_treesitter#foldexpr()` in `lua/nvims/core/options.lua`). Files open fully expanded (`foldlevel=99`); these are built-in Vim fold keys (`z`):
+
+| Key Combination | Mode   | Action  | Description                       |
+| --------------- | ------ | ------- | --------------------------------- |
+| `za`            | Normal | `za`    | Toggle fold under cursor          |
+| `zc`            | Normal | `zc`    | Close (collapse) fold under cursor |
+| `zo`            | Normal | `zo`    | Open fold under cursor            |
+| `zM`            | Normal | `zM`    | Close all folds                   |
+| `zR`            | Normal | `zR`    | Open all folds                    |
+| `zj` / `zk`     | Normal | `zj`/`zk` | Jump to next / previous fold     |
+
 ## Plugin-Specific Key Mappings
 
 ### File Explorer (nvim-tree)
@@ -300,6 +313,7 @@ end, { desc = "Plugin specific action" })
 | `<Space>w` | Workspace/Session       | `wr`, `ws`                         |
 | `g`        | Go to operations        | `gd`, `gD`, `gi`, `gt`, `gR`, `gh` |
 | `[` / `]`  | Navigation              | `[d`, `]d`, `[h`, `]h`, `[t`, `]t` |
+| `z`        | Folding operations      | `za`, `zc`, `zo`, `zM`, `zR`       |
 
 ### Plugin Manager Configuration
 

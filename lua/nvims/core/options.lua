@@ -45,3 +45,9 @@ opt.swapfile = false
 
 -- ensure hidden is set for plugins like toggleterm
 opt.hidden = true
+
+-- folding (treesitter-based, works for json/yaml/etc.)
+opt.foldmethod = "expr" -- use an expression to define folds
+opt.foldexpr = "nvim_treesitter#foldexpr()" -- fold according to treesitter syntax tree
+opt.foldlevel = 99 -- open all folds by default when entering a file
+opt.foldlevelstart = 99 -- start with all folds open (don't fold everything on open)
