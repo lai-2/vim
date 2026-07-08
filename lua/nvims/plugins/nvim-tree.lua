@@ -9,6 +9,33 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		nvimtree.setup({
+			-- Enter / o: mở file trong tab mới; nếu file đã mở thì nhảy tới tab đó
+			on_attach = function(bufnr)
+				local api = require("nvim-tree.api")
+
+				-- giữ toàn bộ mapping mặc định
+				api.config.mappings.default_on_attach(bufnr)
+
+				local function open_tab_drop()
+					local node = api.tree.get_node_under_cursor()
+					if not node then
+						return
+					end
+					-- thư mục và entry "..": giữ hành vi expand/điều hướng mặc định
+					if node.type == "directory" or node.name == ".." then
+						api.node.open.edit()
+						return
+					end
+					-- ":tab drop" = mở tab mới, hoặc nhảy tới tab đã có nếu file đang mở
+					vim.cmd("tab drop " .. vim.fn.fnameescape(node.absolute_path))
+				end
+
+				local function opts(desc)
+					return { buffer = bufnr, noremap = true, silent = true, nowait = true, desc = "nvim-tree: " .. desc }
+				end
+				vim.keymap.set("n", "<CR>", open_tab_drop, opts("Open (tab drop)"))
+				vim.keymap.set("n", "o", open_tab_drop, opts("Open (tab drop)"))
+			end,
 			view = {
 				width = 35,
 				relativenumber = true,

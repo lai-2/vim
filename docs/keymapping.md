@@ -93,6 +93,22 @@ My leader key is set to **Space** (`" "`), which is a popular choice for modern 
 | `<Space>ec`     | Normal | `:NvimTreeCollapse<CR>`       | Collapse file explorer               |
 | `<Space>er`     | Normal | `:NvimTreeRefresh<CR>`        | Refresh file explorer                |
 
+#### Opening files inside the tree (buffer-local)
+
+These work while the cursor is inside the nvim-tree window (`on_attach` in `lua/nvims/plugins/nvim-tree.lua`):
+
+| Key Combination | Mode   | Action                          | Description                                                            |
+| --------------- | ------ | ------------------------------- | ---------------------------------------------------------------------- |
+| `<CR>` / `o`    | Normal | `:tab drop <file>`              | Open file in a **new tab**, or jump to its tab if already open         |
+| `<C-t>`         | Normal | `open in new tab`               | Open in a new tab page (nvim-tree default)                             |
+| `<C-v>`         | Normal | `open in vertical split`        | Open in a vertical split (to the right)                                |
+| `<C-x>`         | Normal | `open in horizontal split`      | Open in a horizontal split (below)                                     |
+| `<Tab>`         | Normal | `preview`                       | Preview file without leaving the tree                                  |
+
+`<CR>` / `o` are remapped: files use `:tab drop` (new tab, or focus the existing tab when the file is
+already open); directories keep the default expand/collapse behavior. "Tab" here means a real Vim tab
+page (`:tabnew`), distinct from the bufferline tabs shown at the top.
+
 ### Telescope (Fuzzy Finder)
 
 | Key Combination | Mode   | Action                       | Description                     |
