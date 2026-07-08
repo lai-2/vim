@@ -32,7 +32,7 @@ return {
 			file_ignore_patterns = { "^.*/%.git/.*", "^.*/node_modules/.*" },
 		})
 
-		telescope.load_extension("fzf")
+		pcall(telescope.load_extension, "fzf")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness

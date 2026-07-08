@@ -144,7 +144,6 @@ return {
 						},
 					})
 				end,
-				["pylsp"] = function() end,
 			},
 		})
 	end,
