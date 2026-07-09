@@ -70,12 +70,20 @@ return {
 			git = {
 				ignore = false,
 			},
+			tab = {
+				sync = {
+					open = true,
+					close = true,
+				},
+			},
 		})
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>ef", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" }) -- focus file explorer
+		keymap.set("n", "<leader>ef", function()
+			require("nvim-tree.api").tree.open({ find_file = true })
+		end, { desc = "Focus file explorer and reveal current file" }) -- focus file explorer and jump to current file
 		keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 		keymap.set(
 			"n",
