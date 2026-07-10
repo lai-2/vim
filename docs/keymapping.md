@@ -122,6 +122,17 @@ These work while the cursor is inside the nvim-tree window (`on_attach` in `lua/
 already open); directories keep the default expand/collapse behavior. "Tab" here means a real Vim tab
 page (`:tabnew`), distinct from the bufferline tabs shown at the top.
 
+#### Copying paths (buffer-local, nvim-tree defaults)
+
+| Key Combination | Mode   | Action                | Description                        |
+| --------------- | ------ | --------------------- | ----------------------------------- |
+| `y`             | Normal | `copy.filename`       | Copy file/folder name               |
+| `Y`             | Normal | `copy.relative_path`  | Copy path relative to the tree root |
+| `gy`            | Normal | `copy.absolute_path`  | Copy absolute path                  |
+
+These are unmodified nvim-tree defaults, kept via `api.config.mappings.default_on_attach(bufnr)` in
+`lua/nvims/plugins/nvim-tree.lua`.
+
 ### Telescope (Fuzzy Finder)
 
 | Key Combination | Mode   | Action                       | Description                     |
