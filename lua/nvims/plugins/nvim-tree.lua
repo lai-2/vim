@@ -37,7 +37,7 @@ return {
 				vim.keymap.set("n", "o", open_tab_drop, opts("Open (tab drop)"))
 			end,
 			view = {
-				width = 35,
+				width = 50,
 				relativenumber = true,
 			},
 			-- change folder arrow icons

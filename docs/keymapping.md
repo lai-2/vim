@@ -50,7 +50,6 @@ My leader key is set to **Space** (`" "`), which is a popular choice for modern 
 | Key Combination | Mode   | Action  | Description                           |
 | --------------- | ------ | ------- | ------------------------------------- |
 | `jk`            | Insert | `<ESC>` | Exit insert mode (alternative to Esc) |
-| `J`             | Normal | `5j`    | Move down 5 lines quickly             |
 | `K`             | Normal | `5k`    | Move up 5 lines quickly               |
 
 ### Search and Utility
